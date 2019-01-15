@@ -111,6 +111,8 @@ protected:
 
         uint16_t totalSize; // Report size in bits
 
+        uint8_t data_offset; // TODO
+
         // Method should be defined here if virtual.
         virtual uint8_t ParseItem(uint8_t **pp, uint16_t *pcntdn);
 
@@ -121,13 +123,14 @@ protected:
 
 public:
 
-        ReportDescParserBase() :
+        ReportDescParserBase(uint8_t offset = 0) :
         itemParseState(0),
         itemSize(0),
         itemPrefix(0),
         rptSize(0),
         rptCount(0),
-        pfUsage(NULL) {
+        pfUsage(NULL),
+        data_offset(offset) {
                 theBuffer.pValue = varBuffer;
                 valParser.Initialize(&theBuffer);
                 theSkipper.Initialize(&theBuffer);

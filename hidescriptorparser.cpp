@@ -996,7 +996,7 @@ void ReportDescParserBase::Parse(const uint16_t len, const uint8_t *pbuf, const 
 
         // If offset is set, parsing is in progress.
         if(offset == 0) {
-                totalSize = 0;
+                totalSize = data_offset;
         }
 
         while(cntdn) {
