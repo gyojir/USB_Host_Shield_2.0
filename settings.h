@@ -168,6 +168,7 @@ e-mail   :  support@circuitsathome.com
 #endif
 
 #ifdef STM32F4
+#define MFK_CASTUINT8T (uint8_t) // STM32F4 return type for sizeof needs casting to uint8_t
 #include "stm32f4xx_hal.h"
 extern SPI_HandleTypeDef SPI_Handle; // Needed to be declared in your main.cpp
 #endif

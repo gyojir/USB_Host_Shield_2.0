@@ -1151,7 +1151,7 @@ MAKE_PIN(P24, Pin_nRF51822_to_Arduino(D24));
 
 #undef MAKE_PIN
 
-#elif defined(STM32F446xx)
+#elif defined(STM32F446xx) || defined(STM32F401xE)
 // NUCLEO-F446RE
 
 #define MAKE_PIN(className, port, pin) \
